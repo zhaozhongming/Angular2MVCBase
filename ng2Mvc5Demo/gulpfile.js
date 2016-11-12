@@ -53,16 +53,17 @@ var tsProject = ts.createProject('tsconfig.json', {
 gulp.task('scripts:app', function (done) {
     //var tsResult = tsProject.src()
     var tsResult = gulp.src([
-            "src/*.ts"
+            "src/**/*.ts"
     ])
+        .pipe(sourcemaps.init())
         .pipe(ts(tsProject));
-    return tsResult.js.pipe(gulp.dest('./dist/app'));
+    return tsResult.js.pipe(sourcemaps.write('.')).pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', ['watch.ts']);
 
-gulp.task('watch.ts', ['ts'], function () {
-    return gulp.watch('src/*.ts', ['ts']);
+gulp.task('watch.ts', [], function () {
+    return gulp.watch('src/**/*.ts', ['scripts:app']);
 });
 
 gulp.task('minify', () => {

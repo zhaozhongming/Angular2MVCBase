@@ -137,6 +137,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="gulpfile.js" />
     <Content Include="package.json" />
+    <Content Include="src\app\about\about.html" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -149,8 +150,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="typings.json" />
     <Content Include="tsconfig.json" />
@@ -158,8 +157,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="src\app\about\" />
     <Folder Include="src\app\contact\" />
+    <Folder Include="src\app\shared\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -171,9 +170,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app.ts" />
-    <TypeScriptCompile Include="src\boot.ts" />
-    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\app\app.ts" />
+    <TypeScriptCompile Include="src\app\about\about.ts" />
+    <TypeScriptCompile Include="src\app\main.ts" />
+    <TypeScriptCompile Include="src\app\boot.ts" />
+    <TypeScriptCompile Include="src\app\route.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -191,7 +192,7 @@
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile />
-    <TypeScriptOutDir>I:\zhaoz1\ng2Mvc5Demo-master\ng2Mvc5Demo\dist\app</TypeScriptOutDir>
+    <TypeScriptOutDir>I:\GitHub\Repos\Angular2MVCBase\ng2Mvc5Demo\dist\app</TypeScriptOutDir>
     <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
