@@ -1,3 +1,4 @@
+"use strict";
 var router_1 = require('@angular/router');
 var app_1 = require('./app');
 var about_1 = require('./about/about');
@@ -7,4 +8,5 @@ exports.routes = [
     { path: 'about', component: about_1.AboutComponent }
 ];
 exports.routing = router_1.RouterModule.forRoot(exports.routes);
+
 //# sourceMappingURL=route.js.map

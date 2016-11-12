@@ -7,6 +7,8 @@ var jsMinify = require('gulp-uglify');
 var SystemBuilder = require('systemjs-builder');
 var sourcemaps = require('gulp-sourcemaps');
 var path = require('path');
+var inlineNg2Template = require('gulp-inline-ng2-template');
+
 var destPath = './dist/';
 
 // Delete the dist directory
@@ -56,14 +58,26 @@ gulp.task('scripts:app', function (done) {
             "src/**/*.ts"
     ])
         .pipe(sourcemaps.init())
+        .pipe(inlineNg2Template({ base: 'src' }))
         .pipe(ts(tsProject));
     return tsResult.js.pipe(sourcemaps.write('.')).pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('watch', ['watch.ts']);
+gulp.task('html', function () {
+    gulp.src([
+            "src/**/*.html"
+    ])
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('watch', ['watch.ts', 'watch.html']);
 
 gulp.task('watch.ts', [], function () {
     return gulp.watch('src/**/*.ts', ['scripts:app']);
+});
+
+gulp.task('watch.html', [], function () {
+    return gulp.watch('src/**/*.html', ['scripts:app']);
 });
 
 gulp.task('minify', () => {
